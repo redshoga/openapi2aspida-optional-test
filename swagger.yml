@@ -1,0 +1,29 @@
+openapi: 3.0.0
+info:
+  title: sample-title
+  description: sample-description
+  version: 0.1.0
+paths:
+  /v1/sample:
+    get:
+      parameters:
+        - in: query
+          name: required_query
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: not_required_query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: sample response description
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sample:
+                    type: string
